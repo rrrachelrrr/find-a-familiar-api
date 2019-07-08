@@ -1,0 +1,2 @@
+class FamiliarsController < ApplicationController
+end

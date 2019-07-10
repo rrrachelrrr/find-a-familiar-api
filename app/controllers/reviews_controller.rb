@@ -9,4 +9,25 @@ class ReviewsController < ApplicationController
     render json: review
   end
 
+  def create
+    review = Review.create(review_params)
+    render json: review
+  end
+
+  def update
+    review = Review.create(review_params)
+    render json: review
+  end
+
+  def destroy
+    review = Review.find_by(id: params[:id])
+    review.destroy
+    render json: review
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:familiar_id, :comment)
+  end
 end
